@@ -213,7 +213,7 @@ input[type=range]{width:min(320px,100%);accent-color:var(--cyan);vertical-align:
       <button class="sndbtn" id="sndbtn" aria-label="Toggle music"><span class="eq"><i></i><i></i><i></i></span><span class="lbl" id="sndlbl">MUSIC ON</span></button>
     </header>
 
-    <div class="ghost" id="ghost" aria-hidden="true">STATUS</div>
+    <div class="ghost" id="ghost" aria-hidden="true">INTRODUCTION</div>
 
     <section class="portrait" aria-hidden="true">
       <svg class="fig" viewBox="0 0 400 600" preserveAspectRatio="xMidYMax meet">
@@ -247,7 +247,7 @@ input[type=range]{width:min(320px,100%);accent-color:var(--cyan);vertical-align:
     <nav class="menu" id="menu" aria-label="Main menu"></nav>
 
     <section class="panel" id="panel" aria-live="polite">
-      <div class="p-head"><h2 id="pTitle">STATUS</h2><button class="backbtn" id="backBtn">BACK</button></div>
+      <div class="p-head"><h2 id="pTitle">INTRODUCTION</h2><button class="backbtn" id="backBtn">BACK</button></div>
       <div class="p-body" id="pBody"></div>
     </section>
 
@@ -445,7 +445,7 @@ const chips = a => `<div class="chips">${a.map(x => `<span class="chip">${x}</sp
 const arcana = (n, name) => `<div class="arcana"><b>${n}</b><span>${name}</span></div>`;
 
 const SECTIONS = [
-  { id: 'status', name: 'STATUS', desc: 'Check my profile and stats.', type: 'page',
+  { id: 'status', name: 'INTRODUCTION', desc: 'Check my profile and stats.', type: 'page',
     render: () => `
       <h3>Yassine El Khantour</h3>
       <p class="sub">Engineering student in Artificial Intelligence &amp; Data Science</p>
@@ -459,7 +459,7 @@ const SECTIONS = [
       </div>
       <div class="kv"><b>School</b><span>EMSI, engineering cycle, 2022 – 2027</span><b>Base</b><span>Salé, Morocco</span><b>Languages</b><span>Arabic, English, French</span></div>` },
 
-  { id: 'skill', name: 'SKILL', desc: 'Browse my technical skills.', type: 'list', entries: [
+  { id: 'skill', name: 'TECH SKILLS', desc: 'Browse my technical skills.', type: 'list', entries: [
     { t: 'AI / ML', s: 'Models and vision', body: 'Training, fine-tuning and evaluating models, from classic classifiers to CNNs for detection and tracking.', tags: ['Machine Learning','Deep Learning','CNN','Computer Vision','Classification','Transfer Learning','Fine-Tuning','Object Detection','Multi-Object Tracking','Grad-CAM','Model Evaluation'] },
     { t: 'Generative AI', s: 'LLMs and agents', body: 'Retrieval-augmented systems and agent workflows built around LLM APIs.', tags: ['RAG','LLM','AI Agents','Multi-Agent Systems','LangGraph','n8n','Gemini API','Prompt Engineering'] },
     { t: 'Python / Data', s: 'Libraries and notebooks', body: 'My daily toolkit for data work, model building and quick demo interfaces.', tags: ['Python','Pandas','NumPy','Scikit-learn','Matplotlib','TensorFlow','PyTorch','OpenCV','Jupyter','Gradio','Streamlit'] },
@@ -468,7 +468,7 @@ const SECTIONS = [
     { t: 'Tools', s: 'Workflow', body: 'Version control, containers and modelling methods.', tags: ['Git','GitHub','Docker','REST API','Linux','UML','Merise'] }
   ] },
 
-  { id: 'persona', name: 'PERSONA', desc: 'Summon the projects I have built.', type: 'list', entries: [
+  { id: 'persona', name: 'PROJECTS', desc: 'Summon the projects I have built.', type: 'list', entries: [
     { t: 'FakeScope AI', s: 'Deepfake detection · Apr 2026 – now', extra: arcana('XVIII', 'The Moon'), body: 'Detects deepfake images and videos with MobileNetV2, Transfer Learning and Fine-Tuning, with Grad-CAM to show what the model looks at. Trained on about 140,000 faces and reaches 84% accuracy.', tags: ['MobileNetV2','Transfer Learning','Fine-Tuning','Grad-CAM'] },
     { t: 'Football Video Analysis', s: 'Computer Vision · 2026', extra: arcana('VII', 'The Chariot'), body: 'Automatic match analysis: detects and tracks players and the ball, then computes speed, possession and heatmaps, all in a Streamlit app.', tags: ['YOLO','OpenCV','Python','Streamlit'] },
     { t: 'Brain Tumor Detection', s: 'Deep Learning · Apr – Jun 2026', extra: arcana('II', 'The Priestess'), body: 'Classifies MRI images with DenseNet, Xception and EfficientNet, and compares them with hybrid approaches: DenseNet + Random Forest and DenseNet + ANN.', tags: ['DenseNet','Xception','EfficientNet','Random Forest','ANN'] },
@@ -476,19 +476,19 @@ const SECTIONS = [
     { t: 'Restaurant Management App', s: 'Web app · Dec 2025 – Jan 2026', extra: arcana('III', 'The Empress'), body: 'A management web application built with ASP.NET Core Razor.', tags: ['ASP.NET Core','Razor','C#'] }
   ] },
 
-  { id: 'records', name: 'RECORDS', desc: 'Review my work experience.', type: 'list', entries: [
+  { id: 'records', name: 'EXPERIENCE', desc: 'Review my work experience.', type: 'list', entries: [
     { t: 'AI Engineer Intern', s: 'Architeo · Jun – Aug 2026', bullets: ['Built a Resume Analyzer that extracts skills, compares CVs with job offers and calculates a match score.', 'Set up NLP, embeddings, semantic search and RAG to search intelligently across many CVs.', 'Integrated a candidate classification system and built the test interface.'] },
     { t: 'Development Intern', s: 'Ministry of Health and Social Protection · Jul – Aug 2025', bullets: ['Built a pharmaceutical e-commerce application with product, order and user management.', 'Stack: Django backend, SQLite, Bootstrap and JavaScript.'] },
     { t: 'Co-founder', s: 'Practice Evo · Entrepreneurial project', bullets: ['Co-created a client acquisition project for small businesses.', 'Covered digital prospecting, market analysis and growth strategy.'] }
   ] },
 
-  { id: 'social', name: 'SOCIAL LINK', desc: 'Education and languages.', type: 'list', entries: [
+  { id: 'social', name: 'EDUCATION', desc: 'Education and languages.', type: 'list', entries: [
     { t: 'EMSI', s: 'École Marocaine des Sciences de l’Ingénieur · 2022 – 2027', body: 'Engineering cycle, specialisation in Data Science and Artificial Intelligence.' },
     { t: 'Institut Adam', s: '2021 – 2022', body: 'Baccalauréat in Experimental Sciences, Physical Sciences option.' },
     { t: 'Languages', s: 'Arabic · English · French', extra: `<div style="margin:.2em 0 1em"><div class="stat"><span>Arabic · native</span>${pips(5)}</div><div class="stat"><span>English · advanced</span>${pips(4)}</div><div class="stat"><span>French · intermediate</span>${pips(3)}</div></div>` }
   ] },
 
-  { id: 'items', name: 'ITEMS', desc: 'Certifications I have collected.', type: 'list', entries: [
+  { id: 'items', name: 'CERTIFICATIONS', desc: 'Certifications I have collected.', type: 'list', entries: [
     { t: 'OCI AI Foundations Associate', s: 'Oracle', body: 'Oracle Cloud Infrastructure Certified AI Foundations Associate.' },
     { t: 'Python for Data Science, AI & Development', s: 'IBM', body: 'Issued by IBM.' },
     { t: 'Software Engineering', s: 'HKUST', body: 'Issued by the Hong Kong University of Science and Technology.' },
